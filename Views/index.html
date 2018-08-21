@@ -1,0 +1,137 @@
+<html>
+
+<head>
+    <title>Inversão Lista</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../bootstrap/css/inversao.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="../js/btn-AdicionarPonteiro.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+
+        <header>
+            <h1>Lista Encadeada</h1>
+        </header>
+        <!-- <h1>Lista Encadeada</h1> -->
+
+        <div class=" col-md-12 ">
+            <div class="col-md-4 float-left" id="menu-lateral">
+                <input type="hidden" value="0" id="qtd-ponteiro"/>
+                <div class="celula">
+                    <label>HEAD</label>
+                    <div class="row celula-display">
+                        <div class="row">
+                            <input class="col-md-2 float-left display" value="10" />
+                            <input class="col-md-2 float-left display" value="B" />
+                        </div>
+                        <div class="row">
+                            <a href="#" class="btn-navegacao">
+                                <i class="material-icons">
+                                    navigate_before
+                                </i>
+                            </a>
+                            <a href="#" class="btn-navegacao">
+                                <i class="material-icons">
+                                    navigate_next
+                                </i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row ">
+                    <a class="btn btn-primary" id="btn-Ponteiro">Adicionar Ponteiro</a>
+                </div>
+                <br>
+                <div id="area-ponteiro">
+                    <div class="celula ">
+                        <label>P</label>
+                        <input type="hidden" value="A" id="endereco"/>
+                        <div class="row celula-display">
+                            <div class="row">
+                                <input class="col-md-2 float-left display" value="10" />
+                                <input class="col-md-2 float-left display" id="next-Endereco" value="B" />
+                            </div>
+                            <div class="row">
+                                <a href="#" class="btn-navegacao" >
+                                    <i class="material-icons">
+                                        navigate_before
+                                    </i>
+                                </a>
+                                <a href="#" class="btn-navegacao "id="btn-next">
+                                    <i class="material-icons">
+                                        navigate_next
+                                    </i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 float-left" id="tabuleiro">
+                <div id="pluzze-A">
+                    <img src="../img/puzzle.png" class="img-pluzze">
+                    <div class="row display-pluzze">
+                        <h3 class="endereco">A</h3>
+                        <label class="col-md-2 display-pluzze-label">10</label>
+                        <label class="col-md-2 display-pluzze-label">B</label>
+                    </div>
+                </div>
+
+                <div id="pluzze-B">
+                    <img src="../img/puzzle.png" class="img-pluzze">
+                    <div class="row display-pluzze">
+                        <h3 class="endereco">B</h3>
+                        <label class="col-md-2 float-left display-pluzze-label">10</label>
+                        <label class="col-md-2 float-left display-pluzze-label">B</label>
+                    </div>
+                </div>
+
+                <div id="pluzze-C">
+                    <img src="../img/puzzle.png" class="img-pluzze">
+                    <div class="row display-pluzze">
+                        <h3 class="endereco">C</h3>
+                        <label class="col-md-2 float-left display-pluzze-label">10</label>
+                        <label class="col-md-2 float-left display-pluzze-label">B</label>
+                    </div>
+                </div>
+
+                <div id="pluzze-D">
+                    <img src="../img/puzzle.png" class="img-pluzze">
+                    <div class="row display-pluzze">
+                        <h3 class="endereco">D</h3>
+                        <label class="col-md-2 float-left display-pluzze-label">10</label>
+                        <label class="col-md-2 float-left display-pluzze-label">B</label>
+                    </div>
+                </div>
+
+                <div id="pluzze-E">
+                    <img src="../img/puzzle.png" class="img-pluzze">
+                    <div class="row display-pluzze">
+                        <h3 class="endereco">E</h3>
+                        <label class="col-md-2 float-left display-pluzze-label">10</label>
+                        <label class="col-md-2 float-left display-pluzze-label">B</label>
+                    </div>
+                </div>
+
+                <div id="pluzze-F">
+                    <img src="../img/puzzle.png" class="img-pluzze">
+                    <div class="row display-pluzze">
+                        <h3 class="endereco">F</h3>
+                        <label class="col-md-2 float-left display-pluzze-label">10</label>
+                        <label class="col-md-2 float-left display-pluzze-label">B</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,117 @@
+a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+}
+
+a:hover {
+    background-color: #0000006b;
+    color: black;
+}
+
+.btn-navegacao {
+    background-color: black;
+    color: white;
+    border-radius: 20%;
+    margin: 3px;
+}
+
+
+
+
+header{
+    text-align: center;
+    
+}
+#menu-lateral{
+    background-color: #e9ecef;
+    height: 90%;
+    text-align: center;
+}
+.celula{
+    padding: 10px;
+}
+
+.celula-display{
+    position: relative;
+    left: 37%;
+}
+
+.display{
+    border: black 1px solid;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+
+label, p, .btn, row > a{
+    text-align: center;
+}
+
+#btn-Ponteiro{
+    position: relative;
+    left: 29%;
+    margin-top: 20px;
+}
+/*****tabuleiro*****/
+#tabuleiro{
+    background-color: #f8f9fa;
+    height: 90%;
+}
+.endereco{
+    position: absolute;
+    bottom: 50px;
+    left: 10px;
+}
+.display-pluzze-label{
+    border:#a5a6a6 1px solid;
+    /* padding: 10px; */
+    text-align: center;
+}
+.img-pluzze{
+    height: 140px;
+    width: 212px;
+}
+
+.display-pluzze{
+    position: relative;
+    bottom: 80px;
+    left: 60px;
+    width: 370px;
+}
+
+#pluzze-A{
+    position: absolute;
+    top: 20px;
+    right: 30px;
+}
+#pluzze-B{
+    position: absolute;
+    top: 20px;
+    left: 30px;
+}
+
+#pluzze-C{
+    position: absolute;
+    top: 220px;
+    left: 133px;
+}
+
+#pluzze-D {
+    position: absolute;
+    top: 220px;
+    right: -68px;
+}
+
+#pluzze-E {
+    position: absolute;
+    top: 420px;
+    right: 30px;
+}
+
+#pluzze-F {
+    position: absolute;
+    top: 420px;
+    left: 30px;
+}
