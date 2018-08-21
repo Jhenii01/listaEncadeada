@@ -1,10 +1,8 @@
+function add(dado,next){
+    var numeroPonteiro = $("#qtd-ponteiro").val();
 
-
-$(document).ready(function () {
-
-    $("#btn-Ponteiro").click(function () {
-        var numeroPonteiro = $("#qtd-ponteiro").val();
-        numeroPonteiro++;
+         numeroPonteiro++;
+        
         if (numeroPonteiro < 5) {
             $("#qtd-ponteiro").val(numeroPonteiro);
             $("#area-ponteiro")
@@ -12,8 +10,8 @@ $(document).ready(function () {
                     '<label>' + numeroPonteiro + '</label>' +
                     '<div class="row celula-display">' +
                     '<div class="row">' +
-                    '<input class="col-md-2 float-left display" value="10" />' +
-                    '<input class="col-md-2 float-left display" value="B" />' +
+                    '<input class="col-md-2 float-left display" value="'+dado+'" />' +
+                    '<input class="col-md-2 float-left display" value="'+next+'" />' +
                     '</div>' +
                     '<div class="row">' +
                     '<a href="#" class="btn-navegacao" id="btn-before-' + numeroPonteiro + '">' +
@@ -31,9 +29,11 @@ $(document).ready(function () {
                     '</div>');
         }else{
             alert("Numero máximo de ponteiros atingido");
-        }
+        } 
+}
 
-    })
+
+$(document).ready(function () {
 
     $("#btn-next").click(function (){
         var a = $( this ).parent("#endereco").siblings().prevObject.prevObject[0].nodeName;

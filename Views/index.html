@@ -11,10 +11,11 @@
         crossorigin="anonymous"></script>
     <script src="../bootstrap/js/bootstrap.min.js"></script>
     <script src="../js/btn-AdicionarPonteiro.js"></script>
+    <script src="../js/main.js"></script>
 
 </head>
 
-<body>
+<body onload="onLoad();">
     <div class="container">
 
         <header>
@@ -29,8 +30,8 @@
                     <label>HEAD</label>
                     <div class="row celula-display">
                         <div class="row">
-                            <input class="col-md-2 float-left display" value="10" />
-                            <input class="col-md-2 float-left display" value="B" />
+                            <input class="col-md-2 float-left display" id="head-dado"/>
+                            <input class="col-md-2 float-left display" id="head-next"/>
                         </div>
                         <div class="row">
                             <a href="#" class="btn-navegacao">
@@ -47,11 +48,11 @@
                     </div>
                 </div>
                 <div class="row ">
-                    <a class="btn btn-primary" id="btn-Ponteiro">Adicionar Ponteiro</a>
+                    <a class="btn btn-primary" id="btn-Ponteiro" onclick="onClick()">Adicionar Ponteiro</a>
                 </div>
                 <br>
                 <div id="area-ponteiro">
-                    <div class="celula ">
+                    <!-- <div class="celula ">
                         <label>P</label>
                         <input type="hidden" value="A" id="endereco"/>
                         <div class="row celula-display">
@@ -72,7 +73,7 @@
                                 </a>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <div class="col-md-8 float-left" id="tabuleiro">
