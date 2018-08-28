@@ -85,16 +85,19 @@ $(document).ready(function () {
     })
 
     $("#head-end").focusin(function () {
-        endAnt = $(".input-head").val().toUpperCase();
+        endAnt = $("#head-end").val().toUpperCase();
     });
 
     $("#head-end").focusout(function () {
         
-        let  endAtual = $(".input-head").val().toUpperCase();
+        let  endAtual = $("#head-end").val().toUpperCase();
         
         if(endAnt != endAtual){
-            $("#pluzze-" + endAtual).show();
-            $("#pluzze-" + endAnt).hide();
+            let cor = procurarCor("head");
+            colorirPluzze(cor, endAtual);
+            show(endAtual);
+            
+            hide(endAnt);
         }
 
     });
