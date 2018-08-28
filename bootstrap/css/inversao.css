@@ -13,10 +13,29 @@ a:hover {
     background-color: black;
     color: white;
     border-radius: 20%;
-    margin: 3px;
+    margin: 4px;
+    position: relative;
+    bottom: 5px;
 }
 
+.btn-add-ponteiro{
+    background-color:#007bff;
+    color: white;
+    border-radius: 20%;
+    margin: 4px;
+    position: relative;
+    left:  41%;
+    margin-top: 20px;
+}
 
+#icon-add{
+    position: relative;
+    bottom: -1px !important;
+}
+.icons{
+    position: relative;
+    top: 5px;
+}
 
 
 header{
@@ -25,7 +44,7 @@ header{
 }
 #menu-lateral{
     background-color: #e9ecef;
-    height: 90%;
+    height: 95%;
     text-align: center;
 }
 .celula{
@@ -42,6 +61,7 @@ header{
     padding: 10px;
     text-align: center;
     margin-bottom: 10px;
+    border-radius: 9px;
 }
 
 
@@ -49,15 +69,10 @@ label, p, .btn, row > a{
     text-align: center;
 }
 
-#btn-Ponteiro{
-    position: relative;
-    left: 29%;
-    margin-top: 20px;
-}
 /*****tabuleiro*****/
 #tabuleiro{
     background-color: #f8f9fa;
-    height: 90%;
+    height: 95%;
 }
 .endereco{
     position: absolute;
@@ -68,17 +83,20 @@ label, p, .btn, row > a{
     border:#a5a6a6 1px solid;
     /* padding: 10px; */
     text-align: center;
+    
+    height: 27px;
 }
 .img-pluzze{
-    height: 140px;
+    height: 78px;
     width: 212px;
 }
 
 .display-pluzze{
     position: relative;
-    bottom: 80px;
-    left: 60px;
-    width: 370px;
+    bottom: 52px;
+    left: 69px;
+    width: 330px;
+    height: 28px;
 }
 
 #pluzze-A{

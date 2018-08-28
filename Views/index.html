@@ -12,10 +12,10 @@
     <script src="../bootstrap/js/bootstrap.min.js"></script>
     <script src="../js/btn-AdicionarPonteiro.js"></script>
     <script src="../js/main.js"></script>
-
-</head>
+    </head>
 
 <body onload="onLoad();">
+        
     <div class="container">
 
         <header>
@@ -25,64 +25,70 @@
 
         <div class=" col-md-12 ">
             <div class="col-md-4 float-left" id="menu-lateral">
-                <input type="hidden" value="0" id="qtd-ponteiro"/>
+                <input type="hidden" value="0" id="qtd-ponteiro" />
                 <div class="celula">
                     <label>HEAD</label>
                     <div class="row celula-display" id="display-0">
-                        <div class="row">
-                            <input class="col-md-2 float-left display input-head" id="head-dado"/>
-                            <input class="col-md-2 float-left display input-head" id="head-next"/>
-                        </div>
-                        <div class="row">
-                            <a href="#" class="btn-navegacao">
-                                <i class="material-icons">
-                                    navigate_before
-                                </i>
-                            </a>
-                            <a href="#" class="btn-navegacao">
-                                <i class="material-icons">
-                                    navigate_next
-                                </i>
-                            </a>
-                        </div>
+                        <input type="hidden" value="head">
+                        <input class="col-md-2 float-left display input-head" id="head-end" />
+
+                        <a href="#" class="btn-navegacao" id="head">
+                            <i class="material-icons">
+                                navigate_next
+                            </i>
+                        </a>
+                        <!-- </div> -->
                     </div>
                 </div>
-                <div class="row ">
-                    <a class="btn btn-primary" id="btn-Ponteiro" onclick="onClick()">Adicionar Ponteiro</a>
-                </div>
-                <br>
+               
                 <div id="area-ponteiro">
                     <!-- <div class="celula ">
                         <label>P</label>
-                        <input type="hidden" value="A" id="endereco"/>
+                        <input type="hidden" value="A" id="endereco" />
                         <div class="row celula-display">
-                            <div class="row">
-                                <input class="col-md-2 float-left display" value="10" />
-                                <input class="col-md-2 float-left display" id="next-Endereco" value="B" />
-                            </div>
-                            <div class="row">
-                                <a href="#" class="btn-navegacao" >
-                                    <i class="material-icons">
-                                        navigate_before
-                                    </i>
-                                </a>
-                                <a href="#" class="btn-navegacao "id="btn-next">
-                                    <i class="material-icons">
+                            <input class="col-md-2 float-left display" id="next-Endereco" value="B" />
+                            <a href="#" class="btn-navegacao " onclick="navNext(this)">
+                                <i class="material-icons icons">
+                                    navigate_next
+                                </i>
+                            </a>
+
+                        </div>
+                    </div>
+
+                    <div class="celula ">
+                            <label>P</label>
+                            <input type="hidden" value="A" id="endereco" />
+                            <div class="row celula-display">
+                                <input class="col-md-2 float-left display" id="next-Endereco" value="C" />
+                                <a href="#" class="btn-navegacao" onclick="navNext(this)" >
+                                    <i class="material-icons icons">
                                         navigate_next
                                     </i>
                                 </a>
+    
                             </div>
-                        </div>
-                    </div> -->
+                        </div> -->
+                </div>
+
+                <div class="row">
+                    <a href="#" class="btn-add-ponteiro " id="btn-next" onclick="onClick()">
+                        <i class="material-icons" id="icon-add">
+                            add
+                        </i>
+                    </a>
+
                 </div>
             </div>
             <div class="col-md-8 float-left" id="tabuleiro">
+
+                    
                 <div id="pluzze-A">
                     <img src="../img/puzzle.png" class="img-pluzze">
                     <div class="row display-pluzze">
                         <h3 class="endereco">A</h3>
                         <label class="col-md-2 display-pluzze-label" id="dado-A"></label>
-                        <label class="col-md-2 display-pluzze-label" id="next-A"></label>
+                        <input class="col-md-2 display-pluzze-label" id="next-A"></input>
                     </div>
                 </div>
 
@@ -91,7 +97,7 @@
                     <div class="row display-pluzze">
                         <h3 class="endereco">B</h3>
                         <label class="col-md-2 display-pluzze-label" id="dado-B"></label>
-                        <label class="col-md-2 display-pluzze-label" id="next-B"></label>
+                        <input class="col-md-2 display-pluzze-label" id="next-B"></input>
                     </div>
                 </div>
 
@@ -100,7 +106,7 @@
                     <div class="row display-pluzze">
                         <h3 class="endereco">C</h3>
                         <label class="col-md-2 display-pluzze-label" id="dado-C"></label>
-                        <label class="col-md-2 display-pluzze-label" id="next-C"></label>
+                        <input class="col-md-2 display-pluzze-label" id="next-C"></input>
                     </div>
                 </div>
 
@@ -109,7 +115,7 @@
                     <div class="row display-pluzze">
                         <h3 class="endereco">D</h3>
                         <label class="col-md-2 display-pluzze-label" id="dado-D"></label>
-                        <label class="col-md-2 display-pluzze-label" id="next-D"></label>
+                        <input class="col-md-2 display-pluzze-label" id="next-D"></input>
                     </div>
                 </div>
 
@@ -118,7 +124,7 @@
                     <div class="row display-pluzze">
                         <h3 class="endereco">E</h3>
                         <label class="col-md-2 display-pluzze-label" id="dado-E"></label>
-                        <label class="col-md-2 display-pluzze-label" id="next-E"></label>
+                        <input class="col-md-2 display-pluzze-label" id="next-E"></input>
                     </div>
                 </div>
 
@@ -127,7 +133,7 @@
                     <div class="row display-pluzze">
                         <h3 class="endereco">F</h3>
                         <label class="col-md-2 display-pluzze-label" id="dado-F"></label>
-                        <label class="col-md-2 display-pluzze-label" id="next-F"></label>
+                        <input class="col-md-2 display-pluzze-label" id="next-F"></input>
                     </div>
                 </div>
             </div>
