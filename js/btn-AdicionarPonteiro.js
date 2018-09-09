@@ -1,3 +1,4 @@
+let nomePonteiro = ['head', 'p']; 
 let ponteirosAtivos = ['head'];
 var ponteiros = new Array();
 var listaOriginal = [

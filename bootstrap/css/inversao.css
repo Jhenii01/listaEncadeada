@@ -9,9 +9,14 @@ a:hover {
     color: black;
 }
 
+#btn-restart{
+    position: relative;
+    top: 8px;
+    left: 7px;
+}
 .btn-navegacao {
     background-color: black;
-    color: white;
+    color: white !important;
     border-radius: 20%;
     margin: 4px;
     position: relative;
@@ -81,7 +86,6 @@ label, p, .btn, row > a{
 }
 .display-pluzze-label{
     border:#a5a6a6 1px solid;
-    /* padding: 10px; */
     text-align: center;
     
     height: 27px;
@@ -101,12 +105,12 @@ label, p, .btn, row > a{
 
 #pluzze-A{
     position: absolute;
-    top: 20px;
+    top: 36px;
     right: 30px;
 }
 #pluzze-B{
     position: absolute;
-    top: 20px;
+    top: 36px;
     left: 30px;
 }
 

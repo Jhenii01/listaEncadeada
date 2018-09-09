@@ -12,115 +12,75 @@
     <script src="../bootstrap/js/bootstrap.min.js"></script>
     <script src="../js/btn-AdicionarPonteiro.js"></script>
     <script src="../js/main.js"></script>
-    </head>
+</head>
 
 <body onload="onLoad();">
-        
+
     <div class="container">
 
         <header>
             <h1>Lista Encadeada</h1>
         </header>
-        <!-- <h1>Lista Encadeada</h1> -->
 
         <div class=" col-md-12 ">
             <div class="col-md-4 float-left" id="menu-lateral">
-                <input type="hidden" value="0" id="qtd-ponteiro" />
+                <a class="btn btn-primary" id="btn-restart" onClick="window.location.reload()"> REINICIAR </a>
                 <div class="celula" id="head">
                     <label>HEAD</label>
                     <div class="row celula-display" id="display-0">
                         <input type="hidden" value="head">
-                        <input class="col-md-2 float-left display" id="head-end" onfocusin="armazenaEnderecoAnterior(this)" onfocusout="navegacaoPeloInput(this)"/>
+                        <input class="col-md-2 float-left display" id="head-end" onfocusin="armazenaEnderecoAnterior(this)" onfocusout="navegacaoPeloInput(this)"
+                        />
 
-                        <a href="#" class="btn-navegacao" id="btn-head" onclick="navNext(this)" >
+                        <a class="btn-navegacao" id="btn-head" onclick="navNext(this)">
                             <i class="material-icons">
                                 navigate_next
                             </i>
                         </a>
-                        <!-- </div> -->
                     </div>
                 </div>
                 <div class="row">
-                        <input type="hidden" value="head">
-                    
-                        <a href="#" class="btn-add-ponteiro " id="btn-show-head" onclick="exibePonteiro(this)">
-                            <i class="material-icons" id="icon-add">
-                                add
-                            </i>
-                        </a>
-                    </div>
+                    <input type="hidden" value="head">
 
-                <div class="celula" id="p">
-                        <label>P</label>
-                        <div class="row celula-display" id="display-0">
-                            <input type="hidden" value="p">
-                            <input class="col-md-2 float-left display" id="p-end" onfocusin="armazenaEnderecoAnterior(this)" onfocusout="navegacaoPeloInput(this)"/>
-    
-                            <a href="#" class="btn-navegacao" id="btn-p" onclick="navNext(this)">
-                                <i class="material-icons">
-                                    navigate_next
-                                </i>
-                            </a>
-                            <!-- </div> -->
-                        </div>
-                    </div>
-                    <div class="row">
-                            <input type="hidden" value="p">
-                        
-                            <a href="#" class="btn-add-ponteiro " id="btn-show-p" onclick="exibePonteiro(this)">
-                                <i class="material-icons" id="icon-add">
-                                    add
-                                </i>
-                            </a>
-                        </div>
-
-                <div id="area-ponteiro">
-                    <!-- <div class="celula ">
-                        <label>P</label>
-                        <input type="hidden" value="A" id="endereco" />
-                        <div class="row celula-display">
-                            <input class="col-md-2 float-left display" id="next-Endereco" value="B" />
-                            <a href="#" class="btn-navegacao " onclick="navNext(this)">
-                                <i class="material-icons icons">
-                                    navigate_next
-                                </i>
-                            </a>
-
-                        </div>
-                    </div>
-
-                    <div class="celula ">
-                            <label>P</label>
-                            <input type="hidden" value="A" id="endereco" />
-                            <div class="row celula-display">
-                                <input class="col-md-2 float-left display" id="next-Endereco" value="C" />
-                                <a href="#" class="btn-navegacao" onclick="navNext(this)" >
-                                    <i class="material-icons icons">
-                                        navigate_next
-                                    </i>
-                                </a>
-    
-                            </div>
-                        </div> -->
-                </div>
-
-                <!-- <div class="row">
-                    <a href="#" class="btn-add-ponteiro " id="btn-next" onclick="onClick()">
+                    <a class="btn-add-ponteiro " id="btn-show-head" onclick="exibePonteiro(this)">
                         <i class="material-icons" id="icon-add">
                             add
                         </i>
                     </a>
-                </div> -->
+                </div>
+
+                <div class="celula" id="p">
+                    <label>P</label>
+                    <div class="row celula-display" id="display-0">
+                        <input type="hidden" value="p">
+                        <input class="col-md-2 float-left display" id="p-end" onfocusin="armazenaEnderecoAnterior(this)" onfocusout="navegacaoPeloInput(this)"
+                        />
+
+                        <a class="btn-navegacao" id="btn-p" onclick="navNext(this)">
+                            <i class="material-icons">
+                                navigate_next
+                            </i>
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <input type="hidden" value="p">
+
+                    <a class="btn-add-ponteiro " id="btn-show-p" onclick="exibePonteiro(this)">
+                        <i class="material-icons" id="icon-add">
+                            add
+                        </i>
+                    </a>
+                </div>
             </div>
             <div class="col-md-8 float-left" id="tabuleiro">
 
-                    
                 <div id="pluzze-A">
                     <img src="../img/puzzle.png" class="img-pluzze">
                     <div class="row display-pluzze">
                         <h3 class="endereco" id="label-A">A</h3>
                         <label class="col-md-2 display-pluzze-label" id="dado-A"></label>
-                        <input class="col-md-2 display-pluzze-label" id="next-A" onfocusout="alteraLista('A')"/>
+                        <input class="col-md-2 display-pluzze-label" id="next-A" onfocusout="alteraLista('A')" />
                     </div>
                 </div>
 
@@ -129,7 +89,7 @@
                     <div class="row display-pluzze">
                         <h3 class="endereco" id="label-B">B</h3>
                         <label class="col-md-2 display-pluzze-label" id="dado-B"></label>
-                        <input class="col-md-2 display-pluzze-label" id="next-B" onfocusout="alteraLista('B')"/>
+                        <input class="col-md-2 display-pluzze-label" id="next-B" onfocusout="alteraLista('B')" />
                     </div>
                 </div>
 
@@ -138,7 +98,7 @@
                     <div class="row display-pluzze">
                         <h3 class="endereco" id="label-C">C</h3>
                         <label class="col-md-2 display-pluzze-label" id="dado-C"></label>
-                        <input class="col-md-2 display-pluzze-label" id="next-C" onfocusout="alteraLista('C')"/>
+                        <input class="col-md-2 display-pluzze-label" id="next-C" onfocusout="alteraLista('C')" />
                     </div>
                 </div>
 
@@ -147,7 +107,7 @@
                     <div class="row display-pluzze">
                         <h3 class="endereco" id="label-D">D</h3>
                         <label class="col-md-2 display-pluzze-label" id="dado-D"></label>
-                        <input class="col-md-2 display-pluzze-label" id="next-D" onfocusout="alteraLista('D')"/>
+                        <input class="col-md-2 display-pluzze-label" id="next-D" onfocusout="alteraLista('D')" />
                     </div>
                 </div>
 
@@ -156,7 +116,7 @@
                     <div class="row display-pluzze">
                         <h3 class="endereco" id="label-E">E</h3>
                         <label class="col-md-2 display-pluzze-label" id="dado-E"></label>
-                        <input class="col-md-2 display-pluzze-label" id="next-E" onfocusout="alteraLista('E')"/>
+                        <input class="col-md-2 display-pluzze-label" id="next-E" onfocusout="alteraLista('E')" />
                     </div>
                 </div>
 
@@ -165,7 +125,7 @@
                     <div class="row display-pluzze">
                         <h3 class="endereco" id="label-F">F</h3>
                         <label class="col-md-2 display-pluzze-label" id="dado-F"></label>
-                        <input class="col-md-2 display-pluzze-label" id="next-F" onfocusout="alteraLista('F')"/>
+                        <input class="col-md-2 display-pluzze-label" id="next-F" onfocusout="alteraLista('F')" />
                     </div>
                 </div>
             </div>
