@@ -13,42 +13,40 @@ function onLoad() {
         document.getElementsByTagName('head')[0].appendChild(script);
         
     });
+    listaEditada = listaOriginal;
+    random = Math.floor(Math.random() * 20);
 
     posicionarLista();
-    $("#head-end").val(list[0].end);
+    
+    preencheInputPonteiro("head");
+    
+    nomePonteiro.forEach(e => {
+        $("#"+e).hide();        
+    });
+    $("#head").show();
+    $("#btn-show-head").hide();
 
-    let cor = gera_cor();
-    $(".input-head").css("background-color", cor);
-
-    ponteiros.push({ nome: "head", cor: cor }); 
-       
-    colorirPluzze(cor, list[0].end);
 }
 
 /**
  * Função posiciona todos os pluzze na tela
  */
 function posicionarLista() {
-    list.forEach(e => {
+    listaEditada.forEach(e => {
         $("#dado-" + e.end).text(e.dado);
-        $("#next-" + e.end).val(e.next);
-        hide(e.end);
+        $("#label-"+e.end).text(codificar(e.end));        
+        if(e.end != "B"){
+            $("#next-" + e.end).val(codificar(e.next));
+        }else{
+            $("#next-" + e.end).val(e.next);
+        }
+        hidePluzze(e.end);
     });
 
-    show(list[0].end);
+    showPluzze(listaEditada[0].end);
 
 }
 
-/**
- * Função controla a adição do poteiro e o prenchimento de cor do mesmo 
- */
-function onClick() {
-    let ponteiro = add(list[0].end);
-    if(ponteiro != null){
-        ponteiros.push(ponteiro);
-        colorirPluzze(ponteiro.cor, list[0].end);
-    }
-}
 
 /*Coloca cor no pluzze */
 /**
@@ -58,47 +56,7 @@ function onClick() {
  * @param {*} end : endereço do pluzze que será preenchido
  */
 function colorirPluzze(cor, end) {
-
+    end = end.toUpperCase();
     $("#dado-" + end).css("background-color", cor);
     $("#next-" + end).css("background-color", cor);
 }
-
-/**
- * Retorna a cor referente ao ponteiro passado por parametro
- * 
- * @param {*} nome : nome do ponteiro que está buscando a cor
- */
-function procurarCor(nome){
-    return ponteiros.filter(l=> l.nome == nome)[0].cor;
-}
-
-
-$(document).ready(function () {
-
-    $("#head").click(function () {
-        let enderecoPluzze = navHead();
-        
-        var nome = $( this ).prev("input").prev("input").val();
-
-        let cor = procurarCor(nome);
-        colorirPluzze(cor, enderecoPluzze);
-    })
-
-    $("#head-end").focusin(function () {
-        endAnt = $("#head-end").val().toUpperCase();
-    });
-
-    $("#head-end").focusout(function () {
-        
-        let  endAtual = $("#head-end").val().toUpperCase();
-        
-        if(endAnt != endAtual){
-            let cor = procurarCor("head");
-            colorirPluzze(cor, endAtual);
-            show(endAtual);
-            
-            hide(endAnt);
-        }
-
-    });
-});
