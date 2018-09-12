@@ -1,4 +1,4 @@
-let nomePonteiro = ['head', 'p']; 
+let nomePonteiro = ['head', 'p','s','r']; 
 let ponteirosAtivos = ['head'];
 var ponteiros = new Array();
 var listaOriginal = [
@@ -29,23 +29,23 @@ function decodificar(char) {
 }
 
 
-function alteraLista(pluzze) {
-    let next = decodificar($("#next-" + pluzze).val().toUpperCase());
-    let index = listaEditada.findIndex(l => l.end == pluzze);
+function alteraLista(puzzle) {
+    let next = decodificar($("#next-" + puzzle).val().toUpperCase());
+    let index = listaEditada.findIndex(l => l.end == puzzle);
     listaEditada[index].next = next;
 
 }
 
 /**
- * Exibe todos os pluzze que possuem ponteiro que apontam para eles
+ * Exibe todos os puzzle que possuem ponteiro que apontam para eles
  */
 function exibeMemoria() {
 
     ponteirosAtivos.forEach(e => {
         let memoria = decodificar($("input[value='" + e + "']").next().val());
-        showPluzze(memoria);
+        showpuzzle(memoria);
         let cor = procurarCor(e);
-        colorirPluzze(cor, memoria);
+        colorirpuzzle(cor, memoria);
     })
 
 }
@@ -60,11 +60,11 @@ function procurarCor(nome) {
 }
 
 /**
- * Esconde o dado e o input que estão dentro do pluzze 
+ * Esconde o dado e o input que estão dentro do puzzle 
  * 
- * @param {*} endHide : endereço do pluzze que deve ser escondido
+ * @param {*} endHide : endereço do puzzle que deve ser escondido
  */
-function hidePluzze(endHide) {
+function hidepuzzle(endHide) {
     endHide = endHide.toUpperCase();
     $("#dado-" + endHide).hide();
     $("#next-" + endHide).hide();
@@ -72,11 +72,11 @@ function hidePluzze(endHide) {
 }
 
 /**
- * Exibe o dado e o input que estão dentro do pluzze
+ * Exibe o dado e o input que estão dentro do puzzle
  * 
- * @param {*} endShow : endereço do pluzze que deve ser exbido
+ * @param {*} endShow : endereço do puzzle que deve ser exbido
  */
-function showPluzze(endShow) {
+function showpuzzle(endShow) {
     endShow = endShow.toUpperCase();
     $("#dado-" + endShow).show();
     $("#next-" + endShow).show();
@@ -101,7 +101,7 @@ function preencheInputPonteiro(ponteiro) {
     $("#" + ponteiro + "-end").val(codificar(listaEditada[0].end));
     $("#" + ponteiro + "-end").css("background-color", cor);
     ponteiros.push({ nome: ponteiro, cor: cor });
-    colorirPluzze(cor, listaEditada[0].end);
+    colorirpuzzle(cor, listaEditada[0].end);
 
 }
 
@@ -112,9 +112,9 @@ function preencheInputPonteiro(ponteiro) {
  */
 function navNext(btn) {
     let endHide = $(btn).prev("input").val().toUpperCase();/*Valor que está no input do ponteiro */
-    let endShow = $("#next-" + decodificar(endHide)).val(); /* Valor que está no input do pluzze */
+    let endShow = $("#next-" + decodificar(endHide)).val(); /* Valor que está no input do puzzle */
 
-    hidePluzze(decodificar(endHide));
+    hidepuzzle(decodificar(endHide));
     $(btn).prev("input").val(endShow);
 
     exibeMemoria();
@@ -130,9 +130,9 @@ function gera_cor() {
     let resultado;
 
     do {
-        let cor = ['#4dd880', '#fad6ae', '#b1e4d3', '#823e9b', '#ece172', '#8be17e', '#ffc107',
+        let cor = ['#4dd880', '#fad6ae', '#b1e4d3', '#823e9b', '#ece172', '#ffc107',
             '#26a993', '#d448a1', '#02f46e'];
-        let index = Math.floor(Math.random() * 10);
+        let index = Math.floor(Math.random() * 9);
         resultado = cor[index];
 
     } while (cores.includes(resultado))
@@ -149,7 +149,7 @@ function navegacaoPeloInput(input) {
     let endAtual = input.value.toUpperCase();
     let ponteiro = $(input).prev("input").val();
     if (endAnt != endAtual) {
-        hidePluzze(decodificar(endAnt));
+        hidepuzzle(decodificar(endAnt));
     }
     exibeMemoria();
 }

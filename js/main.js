@@ -29,7 +29,7 @@ function onLoad() {
 }
 
 /**
- * Função posiciona todos os pluzze na tela
+ * Função posiciona todos os puzzle na tela
  */
 function posicionarLista() {
     listaEditada.forEach(e => {
@@ -40,22 +40,22 @@ function posicionarLista() {
         }else{
             $("#next-" + e.end).val(e.next);
         }
-        hidePluzze(e.end);
+        hidepuzzle(e.end);
     });
 
-    showPluzze(listaEditada[0].end);
+    showpuzzle(listaEditada[0].end);
 
 }
 
 
-/*Coloca cor no pluzze */
+/*Coloca cor no puzzle */
 /**
- * Preenche o pluzze com a cor passada por parametro
+ * Preenche o puzzle com a cor passada por parametro
  * 
  * @param {*} cor : cor que será usada no preenchimento
- * @param {*} end : endereço do pluzze que será preenchido
+ * @param {*} end : endereço do puzzle que será preenchido
  */
-function colorirPluzze(cor, end) {
+function colorirpuzzle(cor, end) {
     end = end.toUpperCase();
     $("#dado-" + end).css("background-color", cor);
     $("#next-" + end).css("background-color", cor);

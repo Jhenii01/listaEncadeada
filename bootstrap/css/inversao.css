@@ -9,10 +9,16 @@ a:hover {
     color: black;
 }
 
+.modal-body > p {
+    text-align: justify;
+}
+
 #btn-restart{
     position: relative;
     top: 8px;
     left: 7px;
+    margin-bottom: 10px;
+    color:white;
 }
 .btn-navegacao {
     background-color: black;
@@ -42,6 +48,9 @@ a:hover {
     top: 5px;
 }
 
+label > i {
+    font-size: 33px !important;
+}
 
 header{
     text-align: center;
@@ -84,18 +93,18 @@ label, p, .btn, row > a{
     bottom: 50px;
     left: 10px;
 }
-.display-pluzze-label{
+.display-puzzle-label{
     border:#a5a6a6 1px solid;
     text-align: center;
     
     height: 27px;
 }
-.img-pluzze{
+.img-puzzle{
     height: 78px;
     width: 212px;
 }
 
-.display-pluzze{
+.display-puzzle{
     position: relative;
     bottom: 52px;
     left: 69px;
@@ -103,36 +112,37 @@ label, p, .btn, row > a{
     height: 28px;
 }
 
-#pluzze-A{
+#puzzle-A{
     position: absolute;
     top: 36px;
     right: 30px;
 }
-#pluzze-B{
+#puzzle-B{
     position: absolute;
     top: 36px;
     left: 30px;
 }
 
-#pluzze-C{
+#puzzle-C{
     position: absolute;
     top: 220px;
     left: 133px;
 }
 
-#pluzze-D {
-    position: absolute;
+#puzzle-D {
+    position: relative;
     top: 220px;
-    right: -68px;
+    left: 427px;
+    max-width: 290px;
 }
 
-#pluzze-E {
+#puzzle-E {
     position: absolute;
     top: 420px;
     right: 30px;
 }
 
-#pluzze-F {
+#puzzle-F {
     position: absolute;
     top: 420px;
     left: 30px;

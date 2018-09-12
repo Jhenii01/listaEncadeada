@@ -2,6 +2,7 @@
 
 <head>
     <title>Inversão Lista</title>
+    <link rel="shortcut icon" type="image/png" href="../img/puzzle.png"/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../bootstrap/css/inversao.css">
@@ -17,16 +18,52 @@
 <body onload="onLoad();">
 
     <div class="container">
-
-        <header>
-            <h1>Lista Encadeada</h1>
-        </header>
+        </br>
 
         <div class=" col-md-12 ">
             <div class="col-md-4 float-left" id="menu-lateral">
+
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-success" id="btn-restart" data-toggle="modal" data-target="#descricao-desafio">
+                    DESAFIO
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="descricao-desafio" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="descricao-desafio">Qual o desafio?</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Você foi desafiado a realizar a inversão de uma lista encadeada utilizando no máximo 4 ponteiros
+                                    que se encontram no lado esquerdo da tela. </p>
+
+                                <img src="../img/modal.png" class="">
+
+                                <p>Cada puzzle representa um nó que está contido em uma posição da memória, seu endereço está
+                                    presente no canto superior do puzzle.</p>
+                                <p>
+                                    Cada nó(puzzle) possui um dado numérico e um endereço para o próximo elemento da lista.
+                                </p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Entendi</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <a class="btn btn-primary" id="btn-restart" onClick="window.location.reload()"> REINICIAR </a>
                 <div class="celula" id="head">
-                    <label>HEAD</label>
+                    <label>
+                        <i class="material-icons">
+                            tag_faces
+                        </i>
+                    </label>
                     <div class="row celula-display" id="display-0">
                         <input type="hidden" value="head">
                         <input class="col-md-2 float-left display" id="head-end" onfocusin="armazenaEnderecoAnterior(this)" onfocusout="navegacaoPeloInput(this)"
@@ -50,7 +87,11 @@
                 </div>
 
                 <div class="celula" id="p">
-                    <label>P</label>
+                    <label>
+                        <i class="material-icons">
+                            star
+                        </i>
+                    </label>
                     <div class="row celula-display" id="display-0">
                         <input type="hidden" value="p">
                         <input class="col-md-2 float-left display" id="p-end" onfocusin="armazenaEnderecoAnterior(this)" onfocusout="navegacaoPeloInput(this)"
@@ -72,60 +113,116 @@
                         </i>
                     </a>
                 </div>
+
+                <div class="celula" id="s">
+                    <label>
+                        <i class="material-icons">
+                            change_history
+                        </i>
+                    </label>
+                    <div class="row celula-display" id="display-0">
+                        <input type="hidden" value="s">
+                        <input class="col-md-2 float-left display" id="s-end" onfocusin="armazenaEnderecoAnterior(this)" onfocusout="navegacaoPeloInput(this)"
+                        />
+
+                        <a class="btn-navegacao" id="btn-s" onclick="navNext(this)">
+                            <i class="material-icons">
+                                navigate_next
+                            </i>
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <input type="hidden" value="s">
+
+                    <a class="btn-add-ponteiro " id="btn-show-s" onclick="exibePonteiro(this)">
+                        <i class="material-icons" id="icon-add">
+                            add
+                        </i>
+                    </a>
+                </div>
+
+                <div class="celula" id="r">
+                    <label>
+                        <i class="material-icons">
+                            trip_origin
+                        </i>
+                    </label>
+                    <div class="row celula-display" id="display-0">
+                        <input type="hidden" value="r">
+                        <input class="col-md-2 float-left display" id="r-end" onfocusin="armazenaEnderecoAnterior(this)" onfocusout="navegacaoPeloInput(this)"
+                        />
+
+                        <a class="btn-navegacao" id="btn-r" onclick="navNext(this)">
+                            <i class="material-icons">
+                                navigate_next
+                            </i>
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <input type="hidden" value="r">
+
+                    <a class="btn-add-ponteiro " id="btn-show-r" onclick="exibePonteiro(this)">
+                        <i class="material-icons" id="icon-add">
+                            add
+                        </i>
+                    </a>
+                </div>
             </div>
             <div class="col-md-8 float-left" id="tabuleiro">
 
-                <div id="pluzze-A">
-                    <img src="../img/puzzle.png" class="img-pluzze">
-                    <div class="row display-pluzze">
+                <div id="puzzle-A">
+                    <img src="../img/puzzle.png" class="img-puzzle">
+                    <div class="row display-puzzle">
                         <h3 class="endereco" id="label-A">A</h3>
-                        <label class="col-md-2 display-pluzze-label" id="dado-A"></label>
-                        <input class="col-md-2 display-pluzze-label" id="next-A" onfocusout="alteraLista('A')" />
+                        <label class="col-md-2 display-puzzle-label" id="dado-A"></label>
+                        <input class="col-md-2 display-puzzle-label" id="next-A" onfocusout="alteraLista('A')" />
                     </div>
                 </div>
 
-                <div id="pluzze-B">
-                    <img src="../img/puzzle.png" class="img-pluzze">
-                    <div class="row display-pluzze">
+                <div id="puzzle-B">
+                    <img src="../img/puzzle.png" class="img-puzzle">
+                    <div class="row display-puzzle">
                         <h3 class="endereco" id="label-B">B</h3>
-                        <label class="col-md-2 display-pluzze-label" id="dado-B"></label>
-                        <input class="col-md-2 display-pluzze-label" id="next-B" onfocusout="alteraLista('B')" />
+                        <label class="col-md-2 display-puzzle-label" id="dado-B"></label>
+                        <input class="col-md-2 display-puzzle-label" id="next-B" onfocusout="alteraLista('B')" />
                     </div>
                 </div>
 
-                <div id="pluzze-C">
-                    <img src="../img/puzzle.png" class="img-pluzze">
-                    <div class="row display-pluzze">
+                <div id="puzzle-C">
+                    <img src="../img/puzzle.png" class="img-puzzle">
+                    <div class="row display-puzzle">
                         <h3 class="endereco" id="label-C">C</h3>
-                        <label class="col-md-2 display-pluzze-label" id="dado-C"></label>
-                        <input class="col-md-2 display-pluzze-label" id="next-C" onfocusout="alteraLista('C')" />
+                        <label class="col-md-2 display-puzzle-label" id="dado-C"></label>
+                        <input class="col-md-2 display-puzzle-label" id="next-C" onfocusout="alteraLista('C')" />
                     </div>
                 </div>
 
-                <div id="pluzze-D">
-                    <img src="../img/puzzle.png" class="img-pluzze">
-                    <div class="row display-pluzze">
+                <div id="puzzle-D">
+                    <img src="../img/puzzle.png" class="img-puzzle">
+                    <div class="row display-puzzle">
                         <h3 class="endereco" id="label-D">D</h3>
-                        <label class="col-md-2 display-pluzze-label" id="dado-D"></label>
-                        <input class="col-md-2 display-pluzze-label" id="next-D" onfocusout="alteraLista('D')" />
+                        <label class="col-md-2 display-puzzle-label" id="dado-D"></label>
+                        <input class="col-md-2 display-puzzle-label" id="next-D" onfocusout="alteraLista('D')" />
                     </div>
                 </div>
 
-                <div id="pluzze-E">
-                    <img src="../img/puzzle.png" class="img-pluzze">
-                    <div class="row display-pluzze">
+                <div id="puzzle-E">
+                    <img src="../img/puzzle.png" class="img-puzzle">
+                    <div class="row display-puzzle">
                         <h3 class="endereco" id="label-E">E</h3>
-                        <label class="col-md-2 display-pluzze-label" id="dado-E"></label>
-                        <input class="col-md-2 display-pluzze-label" id="next-E" onfocusout="alteraLista('E')" />
+                        <label class="col-md-2 display-puzzle-label" id="dado-E"></label>
+                        <input class="col-md-2 display-puzzle-label" id="next-E" onfocusout="alteraLista('E')" />
                     </div>
                 </div>
 
-                <div id="pluzze-F">
-                    <img src="../img/puzzle.png" class="img-pluzze">
-                    <div class="row display-pluzze">
+                <div id="puzzle-F">
+                    <img src="../img/puzzle.png" class="img-puzzle">
+                    <div class="row display-puzzle">
                         <h3 class="endereco" id="label-F">F</h3>
-                        <label class="col-md-2 display-pluzze-label" id="dado-F"></label>
-                        <input class="col-md-2 display-pluzze-label" id="next-F" onfocusout="alteraLista('F')" />
+                        <label class="col-md-2 display-puzzle-label" id="dado-F"></label>
+                        <input class="col-md-2 display-puzzle-label" id="next-F" onfocusout="alteraLista('F')" />
                     </div>
                 </div>
             </div>
