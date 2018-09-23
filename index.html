@@ -2,20 +2,20 @@
 
 <head>
     <title>Inversão Lista</title>
-    <link rel="shortcut icon" type="image/png" href="../img/puzzle.png"/>
+    <link rel="shortcut icon" type="image/png" href="vendor/img/puzzle.png" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../bootstrap/css/inversao.css">
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="vendor/bootstrap/css/inversao.css">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
         crossorigin="anonymous"></script>
-    <script src="../bootstrap/js/bootstrap.min.js"></script>
-    <script src="../js/btn-AdicionarPonteiro.js"></script>
-    <script src="../js/main.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!-- <script src="js/btn-AdicionarPonteiro.js"></script> -->
+    <!-- <script src="js/main.js"></script> -->
 </head>
-
-<body onload="onLoad();">
+<!-- onload="puzzleController.onLoad()" -->
+<body onload="puzzleController.onLoad()" >
 
     <div class="container">
         </br>
@@ -42,7 +42,7 @@
                                 <p>Você foi desafiado a realizar a inversão de uma lista encadeada utilizando no máximo 4 ponteiros
                                     que se encontram no lado esquerdo da tela. </p>
 
-                                <img src="../img/modal.png" class="">
+                                <img src="vendor/img/modal.png" class="">
 
                                 <p>Cada puzzle representa um nó que está contido em uma posição da memória, seu endereço está
                                     presente no canto superior do puzzle.</p>
@@ -66,10 +66,10 @@
                     </label>
                     <div class="row celula-display" id="display-0">
                         <input type="hidden" value="head">
-                        <input class="col-md-2 float-left display" id="head-end" onfocusin="armazenaEnderecoAnterior(this)" onfocusout="navegacaoPeloInput(this)"
+                        <input class="col-md-2 float-left display" id="head-end" onfocusin="ponteiroController.armazenaEnderecoAnterior(this)" onfocusout="ponteiroController.navegacaoPeloInput(this)"
                         />
 
-                        <a class="btn-navegacao" id="btn-head" onclick="navNext(this)">
+                        <a class="btn-navegacao" id="btn-head" onclick="ponteiroController.navNext(this)">
                             <i class="material-icons">
                                 navigate_next
                             </i>
@@ -79,7 +79,7 @@
                 <div class="row">
                     <input type="hidden" value="head">
 
-                    <a class="btn-add-ponteiro " id="btn-show-head" onclick="exibePonteiro(this)">
+                    <a class="btn-add-ponteiro " id="btn-show-head" onclick="ponteiroController.exibePonteiro(this)">
                         <i class="material-icons" id="icon-add">
                             add
                         </i>
@@ -94,10 +94,10 @@
                     </label>
                     <div class="row celula-display" id="display-0">
                         <input type="hidden" value="p">
-                        <input class="col-md-2 float-left display" id="p-end" onfocusin="armazenaEnderecoAnterior(this)" onfocusout="navegacaoPeloInput(this)"
+                        <input class="col-md-2 float-left display" id="p-end" onfocusin="ponteiroController.armazenaEnderecoAnterior(this)" onfocusout="ponteiroController.navegacaoPeloInput(this)"
                         />
 
-                        <a class="btn-navegacao" id="btn-p" onclick="navNext(this)">
+                        <a class="btn-navegacao" id="btn-p" onclick="ponteiroController.navNext(this)">
                             <i class="material-icons">
                                 navigate_next
                             </i>
@@ -107,7 +107,7 @@
                 <div class="row">
                     <input type="hidden" value="p">
 
-                    <a class="btn-add-ponteiro " id="btn-show-p" onclick="exibePonteiro(this)">
+                    <a class="btn-add-ponteiro " id="btn-show-p" onclick="ponteiroController.exibePonteiro(this)">
                         <i class="material-icons" id="icon-add">
                             add
                         </i>
@@ -122,10 +122,10 @@
                     </label>
                     <div class="row celula-display" id="display-0">
                         <input type="hidden" value="s">
-                        <input class="col-md-2 float-left display" id="s-end" onfocusin="armazenaEnderecoAnterior(this)" onfocusout="navegacaoPeloInput(this)"
+                        <input class="col-md-2 float-left display" id="s-end" onfocusin="ponteiroController.armazenaEnderecoAnterior(this)" onfocusout="ponteiroController.navegacaoPeloInput(this)"
                         />
 
-                        <a class="btn-navegacao" id="btn-s" onclick="navNext(this)">
+                        <a class="btn-navegacao" id="btn-s" onclick="ponteiroController.navNext(this)">
                             <i class="material-icons">
                                 navigate_next
                             </i>
@@ -135,7 +135,7 @@
                 <div class="row">
                     <input type="hidden" value="s">
 
-                    <a class="btn-add-ponteiro " id="btn-show-s" onclick="exibePonteiro(this)">
+                    <a class="btn-add-ponteiro " id="btn-show-s" onclick="ponteiroController.exibePonteiro(this)">
                         <i class="material-icons" id="icon-add">
                             add
                         </i>
@@ -150,10 +150,10 @@
                     </label>
                     <div class="row celula-display" id="display-0">
                         <input type="hidden" value="r">
-                        <input class="col-md-2 float-left display" id="r-end" onfocusin="armazenaEnderecoAnterior(this)" onfocusout="navegacaoPeloInput(this)"
+                        <input class="col-md-2 float-left display" id="r-end" onfocusin="ponteiroController.armazenaEnderecoAnterior(this)" onfocusout="ponteiroController.navegacaoPeloInput(this)"
                         />
 
-                        <a class="btn-navegacao" id="btn-r" onclick="navNext(this)">
+                        <a class="btn-navegacao" id="btn-r" onclick="ponteiroController.navNext(this)">
                             <i class="material-icons">
                                 navigate_next
                             </i>
@@ -163,71 +163,98 @@
                 <div class="row">
                     <input type="hidden" value="r">
 
-                    <a class="btn-add-ponteiro " id="btn-show-r" onclick="exibePonteiro(this)">
+                    <a class="btn-add-ponteiro " id="btn-show-r" onclick="ponteiroController.exibePonteiro(this)">
                         <i class="material-icons" id="icon-add">
                             add
                         </i>
                     </a>
                 </div>
+
+                <a class="btn btn-warning" id="btn-restart" onClick="puzzleController.confereResultado()"> CONFERIR </a>
+                
             </div>
             <div class="col-md-8 float-left" id="tabuleiro">
 
                 <div id="puzzle-A">
-                    <img src="../img/puzzle.png" class="img-puzzle">
+                    <img src="vendor/img/puzzle.png" class="img-puzzle">
                     <div class="row display-puzzle">
                         <h3 class="endereco" id="label-A">A</h3>
                         <label class="col-md-2 display-puzzle-label" id="dado-A"></label>
-                        <input class="col-md-2 display-puzzle-label" id="next-A" onfocusout="alteraLista('A')" />
+                        <input class="col-md-2 display-puzzle-label" id="next-A" onfocusout="puzzleController.alteraLista('A')" />
                     </div>
                 </div>
 
                 <div id="puzzle-B">
-                    <img src="../img/puzzle.png" class="img-puzzle">
+                    <img src="vendor/img/puzzle.png" class="img-puzzle">
                     <div class="row display-puzzle">
                         <h3 class="endereco" id="label-B">B</h3>
                         <label class="col-md-2 display-puzzle-label" id="dado-B"></label>
-                        <input class="col-md-2 display-puzzle-label" id="next-B" onfocusout="alteraLista('B')" />
+                        <input class="col-md-2 display-puzzle-label" id="next-B" onfocusout="puzzleController.alteraLista('B')" />
                     </div>
                 </div>
 
                 <div id="puzzle-C">
-                    <img src="../img/puzzle.png" class="img-puzzle">
+                    <img src="vendor/img/puzzle.png" class="img-puzzle">
                     <div class="row display-puzzle">
                         <h3 class="endereco" id="label-C">C</h3>
                         <label class="col-md-2 display-puzzle-label" id="dado-C"></label>
-                        <input class="col-md-2 display-puzzle-label" id="next-C" onfocusout="alteraLista('C')" />
+                        <input class="col-md-2 display-puzzle-label" id="next-C" onfocusout="puzzleController.alteraLista('C')" />
                     </div>
                 </div>
 
                 <div id="puzzle-D">
-                    <img src="../img/puzzle.png" class="img-puzzle">
+                    <img src="vendor/img/puzzle.png" class="img-puzzle">
                     <div class="row display-puzzle">
                         <h3 class="endereco" id="label-D">D</h3>
                         <label class="col-md-2 display-puzzle-label" id="dado-D"></label>
-                        <input class="col-md-2 display-puzzle-label" id="next-D" onfocusout="alteraLista('D')" />
+                        <input class="col-md-2 display-puzzle-label" id="next-D" onfocusout="puzzleController.alteraLista('D')" />
                     </div>
                 </div>
 
                 <div id="puzzle-E">
-                    <img src="../img/puzzle.png" class="img-puzzle">
+                    <img src="vendor/img/puzzle.png" class="img-puzzle">
                     <div class="row display-puzzle">
                         <h3 class="endereco" id="label-E">E</h3>
                         <label class="col-md-2 display-puzzle-label" id="dado-E"></label>
-                        <input class="col-md-2 display-puzzle-label" id="next-E" onfocusout="alteraLista('E')" />
+                        <input class="col-md-2 display-puzzle-label" id="next-E" onfocusout="puzzleController.alteraLista('E')" />
                     </div>
                 </div>
 
                 <div id="puzzle-F">
-                    <img src="../img/puzzle.png" class="img-puzzle">
+                    <img src="vendor/img/puzzle.png" class="img-puzzle">
                     <div class="row display-puzzle">
                         <h3 class="endereco" id="label-F">F</h3>
                         <label class="col-md-2 display-puzzle-label" id="dado-F"></label>
-                        <input class="col-md-2 display-puzzle-label" id="next-F" onfocusout="alteraLista('F')" />
+                        <input class="col-md-2 display-puzzle-label" id="next-F" onfocusout="puzzleController.alteraLista('F')" />
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+
+    <script src="js/app/service/CodificacaoService.js"></script>
+    <script src="js/app/service/CorService.js"></script>
+    <script src="js/app/service/PonteiroService.js"></script>
+    <script src="js/app/service/PuzzleService.js"></script>
+    <script src="js/app/models/Model.js"></script>
+    <script src="js/app/controllers/PonteiroController.js"></script>
+    <script src="js/app/controllers/PuzzleController.js"></script>
+
+    <script>
+        let model = new AppModel();
+        
+        let corService = new CorService(model);
+        let puzzleService = new PuzzleService();
+        let codificacaoService = new CodificacaoService(model);
+        let ponteiroService = new PonteiroService(model,corService,codificacaoService);
+        let ponteiroController = new PonteiroController(
+            model, corService, puzzleService, codificacaoService, ponteiroService
+        );
+        let puzzleController = new PuzzleController(
+            model, corService, puzzleService, codificacaoService, ponteiroService
+        );
+    </script>
 </body>
 
 </html>
